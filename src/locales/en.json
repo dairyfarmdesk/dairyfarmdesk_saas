@@ -1,0 +1,70 @@
+{
+  "app": "DairyFarmDesk",
+  "login": "Login", "email": "Email", "password": "Password", "logout": "Logout", "signin": "Sign in",
+  "welcome": "Welcome", "loading": "Loading…", "save": "Save", "cancel": "Cancel", "edit": "Edit", "delete": "Delete",
+  "add": "Add", "search": "Search", "export": "Export", "csv": "CSV", "excel": "Excel", "pdf": "PDF", "all": "All",
+  "date": "Date", "from": "From", "to": "To", "total": "Total", "amount": "Amount", "notes": "Notes", "name": "Name",
+  "phone": "Phone", "area": "Area", "type": "Type", "status": "Status", "actions": "Actions", "yes": "Yes", "no": "No",
+  "saved": "Saved successfully", "savedQueued": "Saved offline – will sync when online", "error": "Something went wrong",
+  "prev": "Previous", "next": "Next", "page": "Page", "rows": "rows", "noData": "No data", "back": "Back", "close": "Close",
+  "morning": "Morning", "evening": "Evening", "shift": "Shift", "litres": "Litres", "today": "Today", "month": "This month",
+  "nav": {
+    "home": "Home", "milk": "Milk", "customers": "Customers", "expenses": "Expenses", "health": "Health", "animals": "Animals",
+    "dashboard": "Dashboard", "sales": "Customers & Sales", "reports": "Reports", "settings": "Users & Settings", "audit": "Audit Log",
+    "managerApp": "Manager app", "adminConsole": "Admin console", "labour": "Labour", "cash": "Cash sales"
+  },
+  "home": {
+    "totalMilk": "Total milk today", "sold": "Milk sold", "expenses": "Today's expenses", "alerts": "Alerts",
+    "addMilk": "Add milk", "addDelivery": "Deliveries", "addPayment": "Payment", "addExpense": "Expense", "addHealth": "Health record",
+    "noAlerts": "No alerts", "followUp": "Follow-up due", "withdrawal": "Milk withdrawal"
+  },
+  "milk": {
+    "title": "Milk production", "quick": "Quick mode", "single": "Single entry", "saveAll": "Save All", "animal": "Animal",
+    "fat": "Fat %", "snf": "SNF %", "shiftTotal": "Shift total", "dayTotal": "Day total", "avg": "Avg / animal",
+    "doNotSell": "Do not sell this milk", "unusual": "Unusual value vs 7-day average", "duplicate": "Already entered for this animal, date and shift",
+    "confirmUnusual": "Some values look unusual. Save anyway?", "entries": "Entries", "noLactating": "No lactating animals"
+  },
+  "cust": {
+    "title": "Customers", "deliveries": "Deliveries", "payments": "Payments", "ledger": "Ledger", "rate": "Rate / L", "defaultRate": "Default rate",
+    "morningL": "Default morning L", "eveningL": "Default evening L", "active": "Active", "opening": "Opening balance", "supplied": "Milk supplied",
+    "paid": "Paid", "outstanding": "Outstanding", "mode": "Mode", "bill": "Monthly bill", "whatsapp": "WhatsApp", "stock": "Stock check",
+    "produced": "Produced", "difference": "Self use / wastage / calves", "absent": "Absent", "addCustomer": "Add customer", "addPayment": "Add payment",
+    "cow": "Cow", "buffalo": "Buffalo", "milkType": "Milk type", "buysCow": "Buys cow milk", "buysBuffalo": "Buys buffalo milk",
+    "pickType": "Select at least one milk type", "cowSection": "Cow milk", "buffaloSection": "Buffalo milk",
+    "deleteCustomer": "Delete this customer?", "cannotDelete": "Cannot delete: it has deliveries or payments. Mark it inactive instead."
+  },
+  "exp": {
+    "title": "Expenses", "item": "Item", "qty": "Quantity", "unit": "Unit", "rate": "Rate", "supplier": "Supplier", "category": "Category",
+    "payMode": "Payment mode", "bill": "Bill photo", "byCategory": "By category", "daily": "Today", "monthly": "This month"
+  },
+  "health": {
+    "title": "Health records", "symptoms": "Symptoms / Diagnosis", "medicine": "Medicine / Treatment", "dose": "Dose", "vet": "Vet name",
+    "cost": "Cost", "withdrawalDays": "Withdrawal days", "nextDue": "Next due date", "timeline": "Medical timeline", "upcoming": "Upcoming (7 days)"
+  },
+  "animal": {
+    "title": "Animals", "tag": "Tag / Ear no.", "breed": "Breed", "dob": "Date of birth", "purchaseDate": "Purchase date", "purchasePrice": "Purchase price",
+    "source": "Source", "photo": "Photo", "archive": "Archive", "archived": "Archived", "showArchived": "Show archived", "profile": "Animal profile"
+  },
+  "admin": {
+    "kpiMilkToday": "Milk today", "kpiMilkMonth": "Milk this month", "revenue": "Revenue", "expenses": "Expenses", "profit": "Profit",
+    "costPerLitre": "Cost per litre", "dues": "Customer dues", "activeAnimals": "Active animals", "milkTrend": "Milk trend (30 days)",
+    "incomeExpense": "Income vs expense", "expByCat": "Expenses by category", "topProducers": "Top producers", "bottomProducers": "Bottom producers",
+    "farmName": "Farm name", "logo": "Logo", "defaultRate": "Default milk rate", "editDays": "Manager edit window (days)", "managers": "Managers",
+    "addManager": "Add manager", "fullName": "Full name", "deactivate": "Deactivate", "activate": "Activate", "resetPw": "Reset password",
+    "language": "Language", "who": "User", "action": "Action", "table": "Table", "when": "When", "details": "Details"
+  },
+  "reports": {
+    "daily": "Daily summary", "monthly": "Monthly summary", "yearly": "Yearly summary", "pnl": "Profit & Loss", "dues": "Customer-wise dues", "yield": "Animal-wise yield"
+  },
+  "pending": "pending", "offline": "Offline", "syncNow": "Sync now", "install": "Install app",
+  "labour": {
+    "workers": "Workers", "addWorker": "Add worker", "worker": "Worker", "role": "Role / work", "salary": "Monthly salary", "joined": "Joining date",
+    "pickWorker": "Select a worker and enter amount", "paidThisMonth": "Paid to workers this month", "balance": "Balance", "extra": "Extra paid",
+    "settled": "Settled", "advancesMonth": "Advances this month", "totalEver": "Total paid (all time)", "history": "Payment history", "allPayments": "All payments"
+  },
+  "cash": {
+    "today": "Cash collected today", "month": "Cash this month", "collected": "Cash collected", "litresSold": "Litres sold (optional)",
+    "handedTo": "Cash given to (owner)", "ownerName": "Owner name", "history": "Daily cash records", "noOwner": "Owner not noted",
+    "enterAmount": "Enter the cash amount", "entryTab": "Add / daily", "allTab": "All records"
+  }
+}

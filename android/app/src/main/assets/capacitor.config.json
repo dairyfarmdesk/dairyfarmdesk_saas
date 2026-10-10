@@ -1,0 +1,9 @@
+{
+	"appId": "in.dairyfarmdesk.saas",
+	"appName": "DairyFarmDesk",
+	"webDir": "dist",
+	"backgroundColor": "#15803d",
+	"android": {
+		"allowMixedContent": false
+	}
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#15803d"/>
+  <circle cx="256" cy="256" r="226" fill="#f0fdf4"/>
+  <!-- cow head -->
+  <path d="M150 168 q-52 -22 -58 -70 q36 6 66 36 Z" fill="#fbbf24" stroke="#92400e" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M362 168 q52 -22 58 -70 q-36 6 -66 36 Z" fill="#fbbf24" stroke="#92400e" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="118" cy="214" rx="46" ry="26" transform="rotate(-24 118 214)" fill="#fff" stroke="#374151" stroke-width="6"/>
+  <ellipse cx="394" cy="214" rx="46" ry="26" transform="rotate(24 394 214)" fill="#fff" stroke="#374151" stroke-width="6"/>
+  <path d="M148 150 Q256 96 364 150 L384 300 Q384 372 256 392 Q128 372 128 300 Z" fill="#fff" stroke="#374151" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M190 128 Q236 112 262 140 Q246 190 196 184 Q168 160 190 128 Z" fill="#374151"/>
+  <ellipse cx="256" cy="330" rx="86" ry="58" fill="#fbcfe8" stroke="#374151" stroke-width="6"/>
+  <ellipse cx="228" cy="330" rx="13" ry="18" fill="#9d174d"/>
+  <ellipse cx="284" cy="330" rx="13" ry="18" fill="#9d174d"/>
+  <circle cx="204" cy="244" r="15" fill="#111827"/><circle cx="308" cy="244" r="15" fill="#111827"/>
+  <circle cx="209" cy="239" r="5" fill="#fff"/><circle cx="313" cy="239" r="5" fill="#fff"/>
+  <!-- milk drop badge -->
+  <circle cx="390" cy="390" r="68" fill="#15803d" stroke="#f0fdf4" stroke-width="8"/>
+  <path d="M390 340 C418 372 432 392 432 410 a42 42 0 0 1 -84 0 C348 392 362 372 390 340 Z" fill="#fff"/>
+  <path d="M370 408 l14 14 l28 -30" fill="none" stroke="#15803d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

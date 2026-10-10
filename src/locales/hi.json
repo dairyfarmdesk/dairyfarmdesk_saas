@@ -1,0 +1,70 @@
+{
+  "app": "डेयरीफार्मडेस्क",
+  "login": "लॉगिन", "email": "ईमेल", "password": "पासवर्ड", "logout": "लॉगआउट", "signin": "साइन इन",
+  "welcome": "स्वागत है", "loading": "लोड हो रहा है…", "save": "सेव करें", "cancel": "रद्द करें", "edit": "बदलें", "delete": "हटाएं",
+  "add": "जोड़ें", "search": "खोजें", "export": "एक्सपोर्ट", "csv": "CSV", "excel": "एक्सेल", "pdf": "PDF", "all": "सभी",
+  "date": "तारीख", "from": "से", "to": "तक", "total": "कुल", "amount": "राशि", "notes": "टिप्पणी", "name": "नाम",
+  "phone": "फोन", "area": "इलाका", "type": "प्रकार", "status": "स्थिति", "actions": "कार्य", "yes": "हाँ", "no": "नहीं",
+  "saved": "सफलतापूर्वक सेव हुआ", "savedQueued": "ऑफलाइन सेव हुआ – इंटरनेट आने पर सिंक होगा", "error": "कुछ गड़बड़ हो गई",
+  "prev": "पिछला", "next": "अगला", "page": "पेज", "rows": "पंक्तियाँ", "noData": "कोई डेटा नहीं", "back": "वापस", "close": "बंद करें",
+  "morning": "सुबह", "evening": "शाम", "shift": "पाली", "litres": "लीटर", "today": "आज", "month": "इस महीने",
+  "nav": {
+    "home": "होम", "milk": "दूध", "customers": "ग्राहक", "expenses": "खर्च", "health": "स्वास्थ्य", "animals": "पशु",
+    "dashboard": "डैशबोर्ड", "sales": "ग्राहक व बिक्री", "reports": "रिपोर्ट", "settings": "यूज़र व सेटिंग", "audit": "ऑडिट लॉग",
+    "managerApp": "मैनेजर ऐप", "adminConsole": "एडमिन कंसोल", "labour": "मज़दूर", "cash": "नकद बिक्री"
+  },
+  "home": {
+    "totalMilk": "आज का कुल दूध", "sold": "बेचा गया दूध", "expenses": "आज का खर्च", "alerts": "अलर्ट",
+    "addMilk": "दूध दर्ज करें", "addDelivery": "डिलीवरी", "addPayment": "भुगतान", "addExpense": "खर्च", "addHealth": "स्वास्थ्य रिकॉर्ड",
+    "noAlerts": "कोई अलर्ट नहीं", "followUp": "फॉलो-अप देय", "withdrawal": "दूध प्रतिबंध अवधि"
+  },
+  "milk": {
+    "title": "दूध उत्पादन", "quick": "क्विक मोड", "single": "एकल प्रविष्टि", "saveAll": "सभी सेव करें", "animal": "पशु",
+    "fat": "फैट %", "snf": "SNF %", "shiftTotal": "पाली का कुल", "dayTotal": "दिन का कुल", "avg": "औसत / पशु",
+    "doNotSell": "यह दूध न बेचें", "unusual": "7 दिन के औसत से बहुत अलग मान", "duplicate": "इस पशु, तारीख और पाली की प्रविष्टि पहले से है",
+    "confirmUnusual": "कुछ मान असामान्य लग रहे हैं। फिर भी सेव करें?", "entries": "प्रविष्टियाँ", "noLactating": "कोई दुधारू पशु नहीं"
+  },
+  "cust": {
+    "title": "ग्राहक", "deliveries": "डिलीवरी", "payments": "भुगतान", "ledger": "खाता", "rate": "दर / ली.", "defaultRate": "डिफ़ॉल्ट दर",
+    "morningL": "सुबह के ली.", "eveningL": "शाम के ली.", "active": "सक्रिय", "opening": "शुरुआती बकाया", "supplied": "दूध आपूर्ति",
+    "paid": "भुगतान मिला", "outstanding": "बकाया", "mode": "तरीका", "bill": "मासिक बिल", "whatsapp": "व्हाट्सऐप", "stock": "स्टॉक जांच",
+    "produced": "उत्पादन", "difference": "घर उपयोग / बर्बादी / बछड़े", "absent": "अनुपस्थित", "addCustomer": "ग्राहक जोड़ें", "addPayment": "भुगतान जोड़ें",
+    "cow": "गाय", "buffalo": "भैंस", "milkType": "दूध का प्रकार", "buysCow": "गाय का दूध लेता है", "buysBuffalo": "भैंस का दूध लेता है",
+    "pickType": "कम से कम एक दूध प्रकार चुनें", "cowSection": "गाय का दूध", "buffaloSection": "भैंस का दूध",
+    "deleteCustomer": "इस ग्राहक को हटाएं?", "cannotDelete": "हटा नहीं सकते: इसमें डिलीवरी या भुगतान दर्ज हैं। इसे निष्क्रिय करें।"
+  },
+  "exp": {
+    "title": "खर्च", "item": "सामान", "qty": "मात्रा", "unit": "इकाई", "rate": "दर", "supplier": "सप्लायर", "category": "श्रेणी",
+    "payMode": "भुगतान का तरीका", "bill": "बिल की फोटो", "byCategory": "श्रेणी अनुसार", "daily": "आज", "monthly": "इस महीने"
+  },
+  "health": {
+    "title": "स्वास्थ्य रिकॉर्ड", "symptoms": "लक्षण / निदान", "medicine": "दवा / इलाज", "dose": "खुराक", "vet": "पशु चिकित्सक",
+    "cost": "खर्च", "withdrawalDays": "दूध प्रतिबंध (दिन)", "nextDue": "अगली तारीख", "timeline": "स्वास्थ्य इतिहास", "upcoming": "आगामी (7 दिन)"
+  },
+  "animal": {
+    "title": "पशु", "tag": "टैग / कान नंबर", "breed": "नस्ल", "dob": "जन्म तिथि", "purchaseDate": "खरीद तिथि", "purchasePrice": "खरीद मूल्य",
+    "source": "स्रोत", "photo": "फोटो", "archive": "आर्काइव", "archived": "आर्काइव्ड", "showArchived": "आर्काइव्ड दिखाएं", "profile": "पशु प्रोफ़ाइल"
+  },
+  "admin": {
+    "kpiMilkToday": "आज का दूध", "kpiMilkMonth": "इस माह का दूध", "revenue": "आमदनी", "expenses": "खर्च", "profit": "मुनाफ़ा",
+    "costPerLitre": "प्रति लीटर लागत", "dues": "ग्राहक बकाया", "activeAnimals": "सक्रिय पशु", "milkTrend": "दूध का रुझान (30 दिन)",
+    "incomeExpense": "आमदनी बनाम खर्च", "expByCat": "श्रेणी अनुसार खर्च", "topProducers": "सबसे अधिक दूध", "bottomProducers": "सबसे कम दूध",
+    "farmName": "फार्म का नाम", "logo": "लोगो", "defaultRate": "डिफ़ॉल्ट दूध दर", "editDays": "मैनेजर एडिट अवधि (दिन)", "managers": "मैनेजर",
+    "addManager": "मैनेजर जोड़ें", "fullName": "पूरा नाम", "deactivate": "बंद करें", "activate": "चालू करें", "resetPw": "पासवर्ड रीसेट",
+    "language": "भाषा", "who": "यूज़र", "action": "कार्य", "table": "टेबल", "when": "कब", "details": "विवरण"
+  },
+  "reports": {
+    "daily": "दैनिक सारांश", "monthly": "मासिक सारांश", "yearly": "वार्षिक सारांश", "pnl": "लाभ व हानि", "dues": "ग्राहक-वार बकाया", "yield": "पशु-वार उत्पादन"
+  },
+  "pending": "लंबित", "offline": "ऑफलाइन", "syncNow": "अभी सिंक करें", "install": "ऐप इंस्टॉल करें",
+  "labour": {
+    "workers": "मज़दूर", "addWorker": "मज़दूर जोड़ें", "worker": "मज़दूर", "role": "काम / पद", "salary": "मासिक वेतन", "joined": "काम शुरू करने की तारीख",
+    "pickWorker": "मज़दूर चुनें और राशि भरें", "paidThisMonth": "इस माह मज़दूरों को दिया", "balance": "बाकी", "extra": "ज़्यादा दिया",
+    "settled": "हिसाब पूरा", "advancesMonth": "इस माह एडवांस", "totalEver": "कुल दिया (अब तक)", "history": "भुगतान का इतिहास", "allPayments": "सभी भुगतान"
+  },
+  "cash": {
+    "today": "आज की नकद वसूली", "month": "इस माह की नकद वसूली", "collected": "नकद प्राप्त", "litresSold": "बेचा गया दूध, लीटर (वैकल्पिक)",
+    "handedTo": "नकद किसे दिया (मालिक)", "ownerName": "मालिक का नाम", "history": "दैनिक नकद रिकॉर्ड", "noOwner": "मालिक का नाम नहीं लिखा",
+    "enterAmount": "नकद राशि भरें", "entryTab": "जोड़ें / दैनिक", "allTab": "सभी रिकॉर्ड"
+  }
+}

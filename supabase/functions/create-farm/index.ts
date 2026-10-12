@@ -23,6 +23,23 @@ Deno.serve(async (req) => {
     const { data: owner } = await admin.from('platform_admins').select('email').ilike('email', callerEmail).maybeSingle()
     if (!owner) return json({ error: 'Platform owner only' }, 403)
 
+    // Forgotten password help: list a farm's logins, or set a new password for one of them.
+    // (Passwords are stored hashed, so an existing password can never be read back - only replaced.)
+    if (body.action === 'list_users') {
+      const { data, error } = await admin.from('profiles').select('id,email,full_name,role,active').eq('farm_id', String(body.farm_id || '')).order('role')
+      if (error) return json({ error: error.message }, 400)
+      return json({ ok: true, users: data })
+    }
+    if (body.action === 'reset_password') {
+      const pw = String(body.password || '')
+      if (pw.length < 8) return json({ error: 'Password must be at least 8 characters' }, 400)
+      const { data: target } = await admin.from('profiles').select('id').eq('id', String(body.user_id || '')).eq('farm_id', String(body.farm_id || '')).maybeSingle()
+      if (!target) return json({ error: 'User not found in this farm' }, 404)
+      const { error } = await admin.auth.admin.updateUserById(target.id, { password: pw })
+      if (error) return json({ error: error.message }, 400)
+      return json({ ok: true })
+    }
+
     const farm = String(body.farm_name || '').trim()
     const email = String(body.owner_email || '').trim().toLowerCase()
     const password = String(body.password || '')

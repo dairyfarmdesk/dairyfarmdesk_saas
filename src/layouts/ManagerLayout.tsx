@@ -1,6 +1,6 @@
 import { NavLink, Outlet, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Home, Milk, Users, Receipt, HeartPulse, LogOut, LayoutDashboard, PawPrint, HardHat, Banknote } from 'lucide-react'
+import { Home, Milk, Users, Receipt, HeartPulse, LogOut, LayoutDashboard, PawPrint, HardHat, Banknote, Building2 } from 'lucide-react'
 import { useAuth } from '@/lib/auth'
 import { LangToggle, SyncStatus } from '@/components/Status'
 import { fmtDate, todayIST } from '@/lib/format'
@@ -13,7 +13,7 @@ import { PublicFooter } from '@/pages/legal/LegalLayout'
  */
 export default function ManagerLayout() {
   const { t } = useTranslation()
-  const { settings, signOut, isAdmin } = useAuth()
+  const { settings, signOut, isAdmin, isPlatformAdmin } = useAuth()
   const tabs = [
     { to: '/m', icon: Home, label: t('nav.home'), end: true },
     { to: '/m/milk', icon: Milk, label: t('nav.milk') },
@@ -59,7 +59,8 @@ export default function ManagerLayout() {
           </div>
           <SyncStatus light />
           <LangToggle light />
-          {isAdmin && <Link to="/admin" className="grid h-10 w-10 place-items-center rounded-full bg-white/20 md:hidden"><LayoutDashboard className="h-5 w-5" /></Link>}
+          {isAdmin && <Link to="/admin" className="flex items-center gap-1 rounded-full bg-white/20 px-3 py-2 text-xs font-bold md:hidden"><LayoutDashboard className="h-4 w-4" /> {t('nav.adminConsole')}</Link>}
+          {isPlatformAdmin && <Link to="/platform" className="flex items-center gap-1 rounded-full bg-amber-500 px-3 py-2 text-xs font-bold md:hidden"><Building2 className="h-4 w-4" /> Platform</Link>}
           <button onClick={signOut} className="grid h-10 w-10 place-items-center rounded-full bg-white/20 md:hidden" aria-label={t('logout')}><LogOut className="h-5 w-5" /></button>
         </header>
         <main className="mx-auto w-full max-w-xl flex-1 p-3 pb-28 md:max-w-4xl md:p-6 md:pb-8 xl:max-w-6xl"><Outlet /><div className="mt-8"><PublicFooter /></div></main>

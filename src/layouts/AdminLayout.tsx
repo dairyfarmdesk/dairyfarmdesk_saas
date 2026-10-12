@@ -53,6 +53,9 @@ export default function AdminLayout() {
         <header className="sticky top-0 z-20 flex items-center gap-2 border-b border-gray-200 bg-white px-4 py-2">
           <div className="flex-1 font-bold text-brand-900 lg:hidden">{settings?.farm_name || t('app')}</div>
           <div className="hidden flex-1 text-sm text-gray-500 lg:block">{profile?.full_name} · {t('nav.adminConsole')}</div>
+          {/* phone / app: the sidebar is hidden, so the role switch lives in the top bar */}
+          <Link to="/m" className="flex items-center gap-1 rounded-full bg-brand-700 px-3 py-2 text-xs font-bold text-white lg:hidden"><Smartphone className="h-4 w-4" /> {t('nav.managerApp')}</Link>
+          {isPlatformAdmin && <Link to="/platform" className="flex items-center gap-1 rounded-full bg-amber-500 px-3 py-2 text-xs font-bold text-white lg:hidden"><Building2 className="h-4 w-4" /> Platform</Link>}
           <SyncStatus />
           <LangToggle />
         </header>

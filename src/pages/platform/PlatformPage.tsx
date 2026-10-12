@@ -8,6 +8,7 @@ import { useToast } from '@/components/Toast'
 import { Badge, Button, Card } from '@/components/ui'
 import { fmtDate } from '@/lib/format'
 import AddFarmModal, { type NewFarmLogin } from './AddFarmModal'
+import ResetPasswordModal from './ResetPasswordModal'
 
 interface FarmRow {
   farm_id: string; farm_name: string; status: 'active' | 'suspended'; plan: string; created_at: string
@@ -21,6 +22,7 @@ export default function PlatformPage() {
   const qc = useQueryClient()
   const toast = useToast()
   const [adding, setAdding] = useState(false)
+  const [resetFarm, setResetFarm] = useState<{ id: string; name: string } | null>(null)
   const [done, setDone] = useState<NewFarmLogin | null>(null)
 
   const { data: farms = [] } = useQuery({
@@ -81,6 +83,7 @@ export default function PlatformPage() {
                 {r.last_activity ? ` · last activity ${fmtDate(r.last_activity.slice(0, 10))}` : ''}
               </div>
             </div>
+            <Button size="sm" variant="outline" onClick={() => setResetFarm({ id: r.farm_id, name: r.farm_name })}>Reset password</Button>
             <Button size="sm" variant={r.status === 'active' ? 'outline' : 'primary'} onClick={() => setStatus(r)}>
               {r.status === 'active' ? 'Suspend' : 'Reactivate'}
             </Button>
@@ -89,6 +92,7 @@ export default function PlatformPage() {
         {!farms.length && <div className="p-4 text-center text-gray-500">{t('noData')}</div>}
       </Card>
 
+      <ResetPasswordModal farm={resetFarm} onClose={() => setResetFarm(null)} />
       <AddFarmModal open={adding} onClose={() => setAdding(false)} onCreated={(l) => { setDone(l); qc.invalidateQueries({ queryKey: ['platform-farms'] }) }} />
     </div>
   )

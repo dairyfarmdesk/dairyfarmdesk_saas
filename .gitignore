@@ -221,3 +221,7 @@ __marimo__/
 node_modules
 
 .env.local
+
+android/key.properties
+*.jks
+*.keystore

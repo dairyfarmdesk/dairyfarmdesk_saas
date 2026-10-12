@@ -30,13 +30,21 @@ export default function ResetPasswordModal({ farm, onClose }: { farm: { id: stri
   const [password, setPassword] = useState(randomPassword())
   const [busy, setBusy] = useState(false)
   const [done, setDone] = useState('')
+  const [err, setErr] = useState('')
+  const [loadingUsers, setLoadingUsers] = useState(false)
 
   useEffect(() => {
     if (!farm) return
-    setUsers([]); setUserId(''); setDone(''); setPassword(randomPassword())
+    setUsers([]); setUserId(''); setDone(''); setPassword(randomPassword()); setErr(''); setLoadingUsers(true)
     call({ action: 'list_users', farm_id: farm.id })
-      .then((d) => { setUsers(d.users); setUserId(d.users.find((u: FarmUser) => u.role === 'admin')?.id || d.users[0]?.id || '') })
-      .catch((e) => toast(e.message, 'err'))
+      .then((d) => {
+        if (!Array.isArray(d?.users)) throw new Error('The create-farm function is outdated. Deploy it again: supabase functions deploy create-farm')
+        setUsers(d.users)
+        setUserId(d.users.find((u: FarmUser) => u.role === 'admin')?.id || d.users[0]?.id || '')
+        if (!d.users.length) setErr('This farm has no users.')
+      })
+      .catch((e) => setErr(e.message || 'Could not load users'))
+      .finally(() => setLoadingUsers(false))
   }, [farm?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const user = users.find((u) => u.id === userId)
@@ -69,6 +77,8 @@ export default function ResetPasswordModal({ farm, onClose }: { farm: { id: stri
         ) : (
           <>
             <p className="text-xs text-gray-600">An existing password cannot be viewed (it is stored encrypted). Set a new one and send it to the user.</p>
+            {loadingUsers && <div className="text-sm text-gray-500">Loading users…</div>}
+            {err && <div className="rounded-lg bg-red-50 p-2 text-sm font-semibold text-red-700">{err}</div>}
             <Field label="User">
               <select className="w-full rounded-xl border border-gray-300 bg-white px-3 py-2" value={userId} onChange={(e) => setUserId(e.target.value)}>
                 {users.map((u) => <option key={u.id} value={u.id}>{u.full_name || u.email} · {u.email} · {u.role}{u.active ? '' : ' (inactive)'}</option>)}

@@ -225,3 +225,6 @@ node_modules
 android/key.properties
 *.jks
 *.keystore
+
+.DS_Store
+android/.gradle/

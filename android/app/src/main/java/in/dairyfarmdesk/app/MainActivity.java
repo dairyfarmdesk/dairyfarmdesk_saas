@@ -1,4 +1,4 @@
-package in.dairyfarmdesk.saas;
+package in.dairyfarmdesk.app;
 
 import com.getcapacitor.BridgeActivity;
 

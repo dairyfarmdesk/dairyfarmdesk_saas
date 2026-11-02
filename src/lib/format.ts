@@ -30,6 +30,13 @@ export const monthEnd = (iso: string) => {
   return new Date(Date.UTC(y, m, 0)).toISOString().slice(0, 10)
 }
 export const yearStart = (iso: string) => iso.slice(0, 4) + '-01-01'
+export const prevMonthRange = (iso: string): { from: string; to: string } => {
+  const [y, m] = iso.split('-').map(Number)
+  const prevDate = new Date(Date.UTC(y, m - 2, 1))
+  const from = prevDate.toISOString().slice(0, 10)
+  const to = monthEnd(from)
+  return { from, to }
+}
 export const diffDays = (a: string, b: string) => Math.round((Date.parse(b) - Date.parse(a)) / 86400000)
 
 const inrFmt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 0 })

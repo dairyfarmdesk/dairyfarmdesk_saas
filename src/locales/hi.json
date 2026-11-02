@@ -8,6 +8,7 @@
   "saved": "सफलतापूर्वक सेव हुआ", "savedQueued": "ऑफलाइन सेव हुआ – इंटरनेट आने पर सिंक होगा", "error": "कुछ गड़बड़ हो गई",
   "prev": "पिछला", "next": "अगला", "page": "पेज", "rows": "पंक्तियाँ", "noData": "कोई डेटा नहीं", "back": "वापस", "close": "बंद करें",
   "morning": "सुबह", "evening": "शाम", "shift": "पाली", "litres": "लीटर", "today": "आज", "month": "इस महीने",
+  "lastMonth": "पिछला महीना", "thisWeek": "7 दिन", "last30Days": "30 दिन", "thisYear": "इस वर्ष", "custom": "कस्टम", "dateFilter": "तारीख फ़िल्टर", "period": "अवधि",
   "nav": {
     "home": "होम", "milk": "दूध", "customers": "ग्राहक", "expenses": "खर्च", "health": "स्वास्थ्य", "animals": "पशु",
     "dashboard": "डैशबोर्ड", "sales": "ग्राहक व बिक्री", "reports": "रिपोर्ट", "settings": "यूज़र व सेटिंग", "audit": "ऑडिट लॉग",

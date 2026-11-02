@@ -8,6 +8,7 @@
   "saved": "Saved successfully", "savedQueued": "Saved offline – will sync when online", "error": "Something went wrong",
   "prev": "Previous", "next": "Next", "page": "Page", "rows": "rows", "noData": "No data", "back": "Back", "close": "Close",
   "morning": "Morning", "evening": "Evening", "shift": "Shift", "litres": "Litres", "today": "Today", "month": "This month",
+  "lastMonth": "Last month", "thisWeek": "7 Days", "last30Days": "30 Days", "thisYear": "This year", "custom": "Custom", "dateFilter": "Date filter", "period": "Period",
   "nav": {
     "home": "Home", "milk": "Milk", "customers": "Customers", "expenses": "Expenses", "health": "Health", "animals": "Animals",
     "dashboard": "Dashboard", "sales": "Customers & Sales", "reports": "Reports", "settings": "Users & Settings", "audit": "Audit Log",

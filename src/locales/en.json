@@ -49,7 +49,7 @@
   "admin": {
     "kpiMilkToday": "Milk today", "kpiMilkMonth": "Milk this month", "revenue": "Revenue", "expenses": "Expenses", "profit": "Profit",
     "costPerLitre": "Cost per litre", "dues": "Customer dues", "activeAnimals": "Active animals", "milkTrend": "Milk trend (30 days)",
-    "incomeExpense": "Income vs expense", "expByCat": "Expenses by category", "topProducers": "Top producers", "bottomProducers": "Bottom producers",
+    "incomeExpense": "Income vs expense", "expByCat": "Expenses by category", "expByType": "Expenses by type", "topProducers": "Top producers", "bottomProducers": "Bottom producers",
     "farmName": "Farm name", "logo": "Logo", "defaultRate": "Default milk rate", "editDays": "Manager edit window (days)", "managers": "Managers",
     "addManager": "Add manager", "fullName": "Full name", "deactivate": "Deactivate", "activate": "Activate", "resetPw": "Reset password",
     "language": "Language", "who": "User", "action": "Action", "table": "Table", "when": "When", "details": "Details"

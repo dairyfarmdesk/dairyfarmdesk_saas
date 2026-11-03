@@ -10,7 +10,7 @@ import { Badge, Card, Input } from '@/components/ui'
 import { addDays, fmtDate, inr, L, monthEnd, monthStart, prevMonthRange, todayIST, yearStart } from '@/lib/format'
 import { cn, groupBy, sum } from '@/lib/utils'
 
-const COLORS = ['#15803d', '#0ea5e9', '#f59e0b', '#ef4444', '#8b5cf6', '#14b8a6', '#64748b']
+const COLORS = ['#15803d', '#0ea5e9', '#f59e0b', '#8b5cf6', '#ef4444', '#14b8a6', '#ec4899', '#f97316', '#64748b']
 
 const Kpi = ({ label, value, tone, sub }: { label: string; value: string; tone?: string; sub?: string }) => (
   <Card>
@@ -25,6 +25,7 @@ export default function Dashboard() {
   const today = todayIST()
   const [from, setFrom] = useState(monthStart(today))
   const [to, setTo] = useState(monthEnd(today))
+  const [expView, setExpView] = useState<'type' | 'category'>('type')
 
   const prevMonth = useMemo(() => prevMonthRange(today), [today])
 
@@ -90,7 +91,32 @@ export default function Dashboard() {
 
   const m = summary.data
   const chart = (series.data || []).map((r) => ({ ...r, label: fmtDate(r.d).slice(0, 5), litres: Number(r.litres), revenue: Number(r.revenue), expense: Number(r.expense) }))
-  const cat = Object.entries(groupBy(exp, (e) => e.category)).map(([name, r]) => ({ name, value: sum(r, (e) => e.amount) }))
+
+  const expByType = useMemo(() => {
+    const items = [
+      { name: t('exp.title'), value: Number(m?.expenses || 0) },
+      { name: t('nav.labour'), value: Number(m?.labour || 0) },
+      { name: t('nav.health'), value: Number(m?.medical || 0) },
+    ]
+    return items.filter((x) => x.value > 0)
+  }, [m?.expenses, m?.labour, m?.medical, t])
+
+  const expByCat = useMemo(() => {
+    const list = Object.entries(groupBy(exp, (e) => e.category)).map(([name, r]) => ({
+      name,
+      value: sum(r, (e) => e.amount),
+    }))
+    if (Number(m?.labour || 0) > 0) {
+      list.push({ name: t('nav.labour'), value: Number(m?.labour || 0) })
+    }
+    if (Number(m?.medical || 0) > 0) {
+      list.push({ name: t('nav.health'), value: Number(m?.medical || 0) })
+    }
+    return list.filter((x) => x.value > 0).sort((a, b) => b.value - a.value)
+  }, [exp, m?.labour, m?.medical, t])
+
+  const activeExpData = expView === 'type' ? expByType : expByCat
+  const totalExp = sum(activeExpData, (d) => d.value)
   const dues = sum(ledger, (l) => Math.max(0, Number(l.outstanding)))
   const upcoming = med.filter((x) => x.next_due_date && x.next_due_date <= addDays(today, 7)).sort((a, b) => a.next_due_date!.localeCompare(b.next_due_date!))
   const tag = (id: string) => animals.find((a) => a.id === id)?.tag_no
@@ -210,23 +236,79 @@ export default function Dashboard() {
             </BarChart>
           </ResponsiveContainer>
         </Card>
-        <Card>
-          <div className="mb-2 flex items-center justify-between">
-            <h2 className="font-bold">{t('admin.expByCat')}</h2>
-            <span className="text-xs font-semibold text-gray-400">{periodLabel}</span>
+        <Card className="flex flex-col">
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+            <h2 className="font-bold">
+              {expView === 'type' ? t('admin.expByType') : t('admin.expByCat')}
+            </h2>
+            <div className="flex items-center gap-2">
+              <div className="inline-flex rounded-lg bg-gray-100 p-0.5 text-xs font-semibold">
+                <button
+                  type="button"
+                  onClick={() => setExpView('type')}
+                  className={cn(
+                    'rounded-md px-2.5 py-1 transition',
+                    expView === 'type' ? 'bg-brand-700 text-white shadow-sm' : 'text-gray-600 hover:text-gray-900',
+                  )}
+                >
+                  {t('type')}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setExpView('category')}
+                  className={cn(
+                    'rounded-md px-2.5 py-1 transition',
+                    expView === 'category' ? 'bg-brand-700 text-white shadow-sm' : 'text-gray-600 hover:text-gray-900',
+                  )}
+                >
+                  {t('exp.category')}
+                </button>
+              </div>
+              <span className="text-xs font-semibold text-gray-400">{periodLabel}</span>
+            </div>
           </div>
-          <ResponsiveContainer width="100%" height={240}>
-            {cat.length > 0 ? (
+          <ResponsiveContainer width="100%" height={220}>
+            {activeExpData.length > 0 ? (
               <PieChart>
-                <Pie data={cat} dataKey="value" nameKey="name" outerRadius={90} label={(e) => e.name}>
-                  {cat.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
+                <Pie
+                  data={activeExpData}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={75}
+                  innerRadius={35}
+                  paddingAngle={2}
+                >
+                  {activeExpData.map((_, i) => (
+                    <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                  ))}
                 </Pie>
-                <Tooltip formatter={(v: number) => inr(v)} />
+                <Tooltip
+                  formatter={(v: number) => [
+                    `${inr(v)} (${totalExp > 0 ? ((v / totalExp) * 100).toFixed(1) : 0}%)`,
+                    t('admin.expenses'),
+                  ]}
+                />
               </PieChart>
             ) : (
               <div className="flex h-full items-center justify-center text-sm text-gray-400">{t('noData')}</div>
             )}
           </ResponsiveContainer>
+          {activeExpData.length > 0 && (
+            <div className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1.5 border-t border-gray-100 pt-2 text-xs">
+              {activeExpData.map((d, i) => (
+                <div key={d.name} className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: COLORS[i % COLORS.length] }} />
+                  <span className="font-medium text-gray-600">{d.name}:</span>
+                  <span className="font-bold text-gray-900">{inr(d.value)}</span>
+                  <span className="text-gray-400">
+                    ({totalExp > 0 ? Math.round((d.value / totalExp) * 100) : 0}%)
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </Card>
         <Card className="space-y-2">
           <h2 className="font-bold">🔔 {t('home.alerts')}</h2>

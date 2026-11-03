@@ -49,7 +49,7 @@
   "admin": {
     "kpiMilkToday": "आज का दूध", "kpiMilkMonth": "इस माह का दूध", "revenue": "आमदनी", "expenses": "खर्च", "profit": "मुनाफ़ा",
     "costPerLitre": "प्रति लीटर लागत", "dues": "ग्राहक बकाया", "activeAnimals": "सक्रिय पशु", "milkTrend": "दूध का रुझान (30 दिन)",
-    "incomeExpense": "आमदनी बनाम खर्च", "expByCat": "श्रेणी अनुसार खर्च", "topProducers": "सबसे अधिक दूध", "bottomProducers": "सबसे कम दूध",
+    "incomeExpense": "आमदनी बनाम खर्च", "expByCat": "श्रेणी अनुसार खर्च", "expByType": "प्रकार अनुसार खर्च", "topProducers": "सबसे अधिक दूध", "bottomProducers": "सबसे कम दूध",
     "farmName": "फार्म का नाम", "logo": "लोगो", "defaultRate": "डिफ़ॉल्ट दूध दर", "editDays": "मैनेजर एडिट अवधि (दिन)", "managers": "मैनेजर",
     "addManager": "मैनेजर जोड़ें", "fullName": "पूरा नाम", "deactivate": "बंद करें", "activate": "चालू करें", "resetPw": "पासवर्ड रीसेट",
     "language": "भाषा", "who": "यूज़र", "action": "कार्य", "table": "टेबल", "when": "कब", "details": "विवरण"
